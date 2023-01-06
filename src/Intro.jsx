@@ -19,14 +19,15 @@ function Intro({
   subTitle,
   byLine,
   bgImage,
+  bgColor,
   titleBoxClass,
   backgroundClass,
   titleClass,
 }) {
   return (
-    <>
+    <div className="main">
       <div
-        className={backgroundClass ? backgroundClass : "bg-intro"}
+        className={backgroundClass ? backgroundClass : "bg-intro "}
         style={bgImage ? {
           backgroundImage: `url(${bgImage})`
         } :
@@ -46,7 +47,7 @@ function Intro({
           </h2>
         </div>
       </div>
-    </>
+    </div>
   )
 };
 
