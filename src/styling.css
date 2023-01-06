@@ -1,0 +1,28 @@
+.text-center{
+  text-align: center;
+}
+
+.bg-intro{
+  width: 100%;
+  height: 100%;
+  background-repeat: none;
+  background-size: cover;
+  opacity: 0.2;
+}
+
+.title{
+  position: absolute;
+  display: flex;
+  top: 10%;
+  width: 80%;
+  height: 80%;
+  left: 10% 
+}
+
+.title-box{
+  position: relative;
+  margin-top: auto;
+  margin-bottom: auto;
+  /* background-color: rgb(218, 216, 214); */
+  border-radius: 124pt;
+}
