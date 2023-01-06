@@ -1,5 +1,3 @@
-import { urlObjectKeys } from "next/dist/shared/lib/utils"
-
 /**
  * Intro creates a basic introductory page,
  * taking in a title, subTitle, and byLine for 
@@ -8,37 +6,12 @@ import { urlObjectKeys } from "next/dist/shared/lib/utils"
 export function Intro({
   title,
   subTitle,
-  byLine,
-  bgImage,
-  bgColor,
-  opacity,
+  byLine
 }) {
   return (
     <>
-      <div style={bgImage ? {
-        width: "100%",
-        height: "100%",
-        backgroundImage: url(`${bgImage}`),
-        backgroundRepeat: none,
-        backgroundSize: cover,
-        opacity: opacity
-      } :
-        {
-          width: "100%",
-          height: "100%",
-          backgroundColor: bgColor,
-          backgroundRepeat: none,
-          backgroundSize: cover,
-          opacity: opacity
-        }} />
-      <div style={{
-        position: absolute,
-        display: flex,
-        top: "10%",
-        width: "80%",
-        height: "80%",
-        left: "10%",
-      }}>
+      <div className="bg-intro" />
+      <div className="title">
         <div className="title-box">
           <h1 className="text-center">
             {title}
