@@ -6,21 +6,37 @@ import { v4 as uuidv4 } from 'uuid';
  * for text, and the other three-quarters of the slide on the 
  * right is available for an image that is automatically sized
  * and centered to the center of the image container. 
- * It can take a title, subTitle, textArray, image
+ * It can take a title, subTitle, textArray, image, h1Class.
+ * --title provides a title to the component as a string.
+ * --subTitle provides a subtitle to the component as a string.
+ * --h1Class accepts a class to provide specialized css to the h1.
+ * --headerClass accepts a class name for specialized css on the header holding the h1.
+ * --text array is accepts an array of objects [{text, color}] to decide the text and color of each text entry. 
+ * --leftBoxClass accepts a class name to customize css of the left box.
+ * --imageObject accepts an object including an image and a description: 
+ * {image: 'https', description: 'This is an example image'}. The description also is included in the alt-text as well as the figcaption.
+ * --rightBoxClass accepts a class name to customize css of the right box container.
  */
 function SplitSlide({
   title,
-  subTitle
+  subTitle,
+  h1Class,
+  headerClass,
+  textArray,
+  imageObject,
+  leftBoxClass,
+  rightBoxClass,
+  imgBoxClass,
 }) {
   return (
-    <div className="cover">
-      <div className="header">
-        <h1 className="align-self-middle mr-3">
-          {title} {subTitle && <br />} {subTitle ? subTitle : null}
+    <div>
+      <div className={headerClass ? headerClass : "header"}>
+        <h1 className={h1Class ? h1Class : null}>
+          {title} {subTitle ? <><br /> {subTitle}</> : null}
         </h1>
       </div>
-      <div className="left-box">
-        {slide.text.map(a => {
+      <div className={leftBoxClass ? leftBoxClass : "left-box"}>
+        {textArray.map(a => {
           return (
             <p
               key={uuidv4()}
@@ -30,16 +46,15 @@ function SplitSlide({
           )
         })}
       </div>
-      <div className="right-box">
-        {slide.images.map(a => (
-          <figure className="img-box" key={uuidv4()}>
-            <img src={a.image} />
-            <figcaption
-              className="text-center">
-              {a.description}
-            </figcaption>
-          </figure>
-        ))}
+      <div className={rightBoxClass ? rightBoxClass : "right-box"}>
+        <figure
+          className={imgBoxClass ? imgBoxClass : "img-box"}>
+          <img src={imageObject.image} alt={imageObject.description} />
+          <figcaption
+            className="text-center">
+            {imageObject.description}
+          </figcaption>
+        </figure>
       </div>
     </div>
   )
