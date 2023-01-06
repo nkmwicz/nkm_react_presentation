@@ -1,14 +1,53 @@
-export function Intro() {
+import { urlObjectKeys } from "next/dist/shared/lib/utils"
+
+/**
+ * Intro creates a basic introductory page,
+ * taking in a title, subTitle, and byLine for 
+ * metaData on the slideShow.
+ */
+export function Intro({
+  title,
+  subTitle,
+  byLine,
+  bgImage,
+  bgColor,
+  opacity,
+}) {
   return (
     <>
-      <div className="bg-toulon" />
-      <div className="title">
+      <div style={bgImage ? {
+        width: "100%",
+        height: "100%",
+        backgroundImage: url(`${bgImage}`),
+        backgroundRepeat: none,
+        backgroundSize: cover,
+        opacity: opacity
+      } :
+        {
+          width: "100%",
+          height: "100%",
+          backgroundColor: bgColor,
+          backgroundRepeat: none,
+          backgroundSize: cover,
+          opacity: opacity
+        }} />
+      <div style={{
+        position: absolute,
+        display: flex,
+        top: "10%",
+        width: "80%",
+        height: "80%",
+        left: "10%",
+      }}>
         <div className="title-box">
           <h1 className="text-center">
-            France's Greatest Ally: <br />
-            The Ottoman Empire in French Foreign Policy during the Sixteenth Century</h1><br />
+            {title}
+            <br />
+            {subTitle}
+          </h1>
+          <br />
           <h2 className="text-center">
-            Nathan Michalewicz
+            {byLine}
           </h2>
         </div>
       </div>
