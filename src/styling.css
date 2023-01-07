@@ -138,3 +138,34 @@ button:disabled {
   background-color: azure;
   opacity: 0.4;
 }
+
+.content-images {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  object-fit: contain;
+}
+.content-text {
+  height: 100%;
+  width: 100%;
+  padding: 50px 0 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  object-fit: contain;
+}
+
+.text{
+  flex: 1,
+
+}
+
+.content-box p {
+  font-size: 1.7em;
+}
+
+.content-box li {
+  font-size: 1.5em;
+}
