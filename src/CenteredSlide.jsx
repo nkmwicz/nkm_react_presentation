@@ -1,4 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
+import "./styling.css";
+
 
 /**
  * --headerClass is a class
@@ -16,10 +18,11 @@ function CenteredSlide({
   imagesArray,
   textArray,
   contentBoxClass,
-  contentTextClass
+  contentTextClass,
+  imageArrayBoxClass,
 }) {
   return (
-    <>
+    <div className='cover'>
       <div className={`${headerClass} header`}>
         <h1>
           {title} {subTitle ? <><br /> {subTitle}</> : null}
@@ -32,13 +35,14 @@ function CenteredSlide({
               <figure
                 key={uuidv4()}
                 className={`${imageArrayBoxClass} imgArray-box`}
-                style={{ flex: a.flex }}>
+                style={a.flex ? { flex: a.flex } : { flex: 1 }}>
                 <img src={a.image ? a.image : 1} />
                 <figcaption className="text-center">
                   {a.description}
                 </figcaption>
               </figure>
-            ))}</div> :
+            ))}
+          </div> :
           <div className={`${contentTextClass} content-text`}>{textArray.map(a => {
             if (a.length > 0) {
               return (
@@ -73,7 +77,7 @@ function CenteredSlide({
             // }
           })}</div>}
       </div>
-    </>
+    </div>
   )
 }
 
