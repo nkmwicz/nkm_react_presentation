@@ -15,14 +15,13 @@ function CenteredSlide({
   subTitle,
   imagesArray,
   textArray,
-  headerClass,
   contentBoxClass,
   contentTextClass
 }) {
   return (
     <>
       <div className={`${headerClass} header`}>
-        <h1 className="align-self-middle mr-3">
+        <h1>
           {title} {subTitle ? <><br /> {subTitle}</> : null}
         </h1>
       </div>
