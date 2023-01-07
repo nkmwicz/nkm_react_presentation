@@ -1,5 +1,6 @@
 ===To Do==
 [ ] splitSlide
 [ ] centeredSlide
-[ ] splitSlideMap
-[ ] 
+[x] splitSlideMap
+[x] Intro
+[x] refactor code to individual files.
