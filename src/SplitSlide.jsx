@@ -30,31 +30,35 @@ function SplitSlide({
 }) {
   return (
     <div>
-      <div className={headerClass ? headerClass : "header"}>
+      <div className={`${headerClass} header`}>
         <h1 className={h1Class ? h1Class : null}>
           {title} {subTitle ? <><br /> {subTitle}</> : null}
         </h1>
       </div>
       <div className={leftBoxClass ? leftBoxClass : "left-box"}>
-        {textArray.map(a => {
-          return (
-            <p
-              key={uuidv4()}
-              style={{ color: a.color }}>
-              {a.text}
-            </p>
-          )
-        })}
+        {typeof textArray !== 'object' ?
+          console.error("textArray prop must be included, and it should have the following data format: [{text: 'string', color: 'string'}]") :
+          textArray.map(a => {
+            return (
+              <p
+                key={uuidv4()}
+                style={{ color: a.color }}>
+                {a.text}
+              </p>
+            )
+          })}
       </div>
       <div className={rightBoxClass ? rightBoxClass : "right-box"}>
-        <figure
-          className={imgBoxClass ? imgBoxClass : "img-box"}>
-          <img src={imageObject.image} alt={imageObject.description} />
-          <figcaption
-            className="text-center">
-            {imageObject.description}
-          </figcaption>
-        </figure>
+        {typeof imageObject !== 'object' ?
+          console.error("imageObject must be present and in the following data format: {image: 'string', description: 'string'}")
+          : <figure
+            className={imgBoxClass ? imgBoxClass : "img-box"}>
+            <img src={imageObject.image} alt={imageObject.description} />
+            <figcaption
+              className="text-center">
+              {imageObject.description}
+            </figcaption>
+          </figure>}
       </div>
     </div>
   )
