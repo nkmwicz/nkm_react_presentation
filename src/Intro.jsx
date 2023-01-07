@@ -1,4 +1,6 @@
 import "./styling.css";
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 /**
  * --Intro creates a basic introductory page,
@@ -38,7 +40,7 @@ function Intro({
         <div className={titleBoxClass ? titleBoxClass : "title-box"}>
           <h1 className="text-center">
             {title}
-            <br />
+            <br /><br />
             {subTitle}
           </h1>
           <br />
