@@ -3,7 +3,7 @@ body{
   width: 100%;
   margin: 0;
   padding: 0;
-  font-family:Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia, 'Times New Roman', Times, serif !important;
 }
 
 .text-center{
@@ -45,6 +45,7 @@ body{
   position: relative;
   margin-top: auto;
   margin-bottom: auto;
+  padding: 10px 25px;
   background-color: rgb(218, 216, 214);
   border-radius: 124pt;
 }
@@ -63,7 +64,15 @@ body{
 .header h1 {
   align-self: center;
   margin: auto;
-  font-size: 2em;
+  /* font-size: 10vw !important; */
+}
+
+h1{
+  font-size: 1vw;
+}
+
+.left-box p {
+  font-size: 1.5em;
 }
 
 .left-box{
@@ -101,4 +110,31 @@ body{
   object-fit: contain;
   flex-direction: column;
   justify-content: center;
+}
+
+.rightArrow{
+  position:absolute;
+  right: 10px;
+  top: 50%;
+  background-color: lightgrey;
+  color: black;
+  border: solid black 1px;
+  border-radius: 5pt;
+  z-index: 999;
+}
+
+.leftArrow{
+  position:absolute;
+  left: 10px;
+  top: 50%;
+  background-color: lightgrey;
+  color: black;
+  border: solid black 1px;
+  border-radius: 5pt;
+  z-index: 999;
+}
+
+button:disabled {
+  background-color: azure;
+  opacity: 0.4;
 }
