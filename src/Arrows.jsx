@@ -1,3 +1,5 @@
+import "./styling.css";
+
 /**
  * --disableLeftArrow takes a function that sets the conditions
  * under which the left arrow should be disabled.
