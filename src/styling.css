@@ -139,6 +139,16 @@ button:disabled {
   opacity: 0.4;
 }
 
+.content-box{
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  padding: 0 20px;
+  top: 15%;
+  left: 10%;
+  /* object-fit: contain; */
+}
+
 .content-images {
   height: 100%;
   width: 100%;
@@ -147,6 +157,19 @@ button:disabled {
   justify-content: space-around;
   object-fit: contain;
 }
+
+.imgArray-box{
+  flex: 1;
+  padding: 0 10px;
+  position: relative;
+  object-fit: contain;
+}
+
+.imgArray-box img{
+  border: double black;
+  width: 100%;
+}
+
 .content-text {
   height: 100%;
   width: 100%;
@@ -159,7 +182,6 @@ button:disabled {
 
 .text{
   flex: 1,
-
 }
 
 .content-box p {
@@ -168,4 +190,10 @@ button:disabled {
 
 .content-box li {
   font-size: 1.5em;
+}
+
+.cover {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(218, 216, 214);
 }
