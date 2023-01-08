@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from 'uuid';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import './styling.css';
 
 /**
  * SplitSlideChild operates similarly to splitSlide, but instead
@@ -52,8 +53,8 @@ function SplitSlideEmbed({
           })}
       </div>
       <div
-        className={rightChildBoxClass ? `${rightChildBoxClass} right-child-box` : "right-child-box"}>
-        <div class="ratio ratio-16x9">
+        className={rightChildBoxClass ? `${rightChildBoxClass} right-box` : "right-box"}>
+        <div class="ratio ratio-16x9 embed-box">
           <iframe src={embedURL} title={embedTitle} allowFullScreen />
         </div>
       </div>
