@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import PropTypes from 'prop-types'
 
 /**
  * SplitSlideChild operates similarly to splitSlide, but instead
@@ -60,21 +61,21 @@ function SplitSlideChild({
 };
 
 SplitSlideChild.propTypes = {
-  headerClass: propTypes.string,
-  h1Class: propTypes.string,
-  title: propTypes.string,
-  subTitle: propTypes.string,
-  leftBoxClass: propTypes.string,
-  textArray: propTypes.arrayOf(propTypes.shape({
-    text: propTypes.string,
-    color: propTypes.string
+  headerClass: PropTypes.string,
+  h1Class: PropTypes.string,
+  title: PropTypes.string,
+  subTitle: PropTypes.string,
+  leftBoxClass: PropTypes.string,
+  textArray: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string,
+    color: PropTypes.string
   })),
-  children: PropTytpes.element.isRequired,
+  children: PropTypes.element.isRequired,
   ref: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.shape({ current: PropTypes.any })
   ]),
-  rightChildBoxClass: propTypes.string,
+  rightChildBoxClass: PropTypes.string,
 };
 
 export default SplitSlideChild;
