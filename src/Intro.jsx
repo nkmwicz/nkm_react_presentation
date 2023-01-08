@@ -27,7 +27,7 @@ function Intro({
   titleClass,
 }) {
   return (
-    <div className="main">
+    <>
       <div
         className={backgroundClass ? backgroundClass : "bg-intro "}
         style={bgImage ? {
@@ -49,7 +49,7 @@ function Intro({
           </h2>
         </div>
       </div>
-    </div>
+    </>
   )
 };
 
