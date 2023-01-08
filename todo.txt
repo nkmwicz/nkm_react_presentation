@@ -1,6 +1,7 @@
 ===To Do==
-[ ] splitSlide
-[ ] centeredSlide
+[x] splitSlide
+[x] centeredSlide
 [x] splitSlideMap
 [x] Intro
 [x] refactor code to individual files.
+[ ] proptypes to each component.
