@@ -45,9 +45,6 @@ body{
   position: relative;
   margin-top: auto;
   margin-bottom: auto;
-  padding: 10px 25px;
-  background-color: rgb(218, 216, 214);
-  border-radius: 124pt;
 }
 
 .header{
@@ -195,5 +192,11 @@ button:disabled {
 .cover {
   height: 100%;
   width: 100%;
-  background-color: rgb(218, 216, 214);
+  /* background-color: rgb(218, 216, 214); */
+}
+
+.embed-box{
+  position: relative;
+  height: 100%;
+  width: 100%;
 }
