@@ -36,7 +36,7 @@ function CenteredSlide({
                 key={uuidv4()}
                 className={`${imageArrayBoxClass} imgArray-box`}
                 style={a.flex ? { flex: a.flex } : { flex: 1 }}>
-                <img src={a.image ? a.image : 1} />
+                <img src={a.image ? a.image : null} alt={a.description} />
                 <figcaption className="text-center">
                   {a.description}
                 </figcaption>
