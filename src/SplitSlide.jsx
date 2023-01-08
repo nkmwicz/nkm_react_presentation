@@ -53,7 +53,7 @@ function SplitSlide({
         {typeof imageObject !== 'object' ?
           console.error("imageObject must be present and in the following data format: {image: 'string', description: 'string'}")
           : <figure
-            className={imgBoxClass ? imgBoxClass : "img-box"}>
+            className={imgBoxClass ? imgBoxClass : "img-right-box"}>
             <img src={imageObject.image} alt={imageObject.description} />
             <figcaption
               className="text-center">
