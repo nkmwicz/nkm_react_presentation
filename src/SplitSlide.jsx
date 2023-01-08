@@ -41,11 +41,13 @@ function SplitSlide({
           console.error("textArray prop must be included, and it should have the following data format: [{text: 'string', color: 'string'}]") :
           textArray.map(a => {
             return (
-              <p
-                key={uuidv4()}
-                style={{ color: a.color }}>
-                {a.text}
-              </p>
+              <div className="left-text-container">
+                <p
+                  key={uuidv4()}
+                  style={{ color: a.color }}>
+                  {a.text}
+                </p>
+              </div>
             )
           })}
       </div>
