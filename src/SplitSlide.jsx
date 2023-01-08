@@ -1,5 +1,6 @@
 import "./styling.css";
 import { v4 as uuidv4 } from 'uuid';
+import PropTypes from 'prop-types'
 /**
  * The SplitSlide component provides a split slide 
  * with a quarter of the slide on the left providing space 
@@ -63,5 +64,23 @@ function SplitSlide({
     </div>
   )
 };
+
+SplitSlide.propTypes = {
+  title: PropTypes.string,
+  subTitle: PropTypes.string,
+  h1Class: PropTypes.string,
+  headerClass: PropTypes.string,
+  textArray: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string,
+    color: PropTypes.string,
+  })),
+  imageObject: PropTypes.shape({
+    image: PropTypes.string,
+    description: PropTypes.string
+  }),
+  leftBoxClass: PropTypes.string,
+  rightBoxClass: PropTypes.string,
+  imgBoxClass: PropTypes.string,
+}
 
 export default SplitSlide;
