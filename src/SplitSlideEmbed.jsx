@@ -61,7 +61,7 @@ function SplitSlideEmbed({
   )
 };
 
-SplitSlideChild.propTypes = {
+SplitSlideEmbed.propTypes = {
   headerClass: PropTypes.string,
   h1Class: PropTypes.string,
   title: PropTypes.string,
