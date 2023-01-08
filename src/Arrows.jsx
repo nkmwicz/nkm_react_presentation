@@ -1,4 +1,6 @@
 import "./styling.css";
+import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * --disableLeftArrow takes a function that sets the conditions
@@ -11,6 +13,8 @@ import "./styling.css";
  * the right arrow is clicked.
  * --handlePrevClick takes a function for determining what happens when 
  * the left arrow is clicked.
+ * --index accepts a state feature that will determine the index
+ * stateArray that will determine the current slide state.
  */
 
 function Arrows({
@@ -19,15 +23,35 @@ function Arrows({
   rightArrowClass,
   leftArrowClass,
   handleNextClick,
-  handlePrevClick
+  handlePrevClick,
 }) {
+  useEffect(() => {
+    const click = (e) => {
+      if (e.keyCode === 37) {
+        e.preventDefault()
+        // left arrow
+        handlePrevClick
+        console.log(e.keyCode)
+      }
+      if (e.keyCode === 39) {
+        e.preventDefault()
+        //right arrow
+        handleNextClick
+        console.log(handleNextClick)
+      }
+    }
+    window.addEventListener('keyup', click, false);
+    return function cleanup() {
+      window.removeEventListener('keyup', click, false);
+    }
+  });
+
   return (
     <>
       {disableRightArrow ? <button
         type='button'
         className={rightArrowClass ? rightArrowClass : "rightArrow"}
-        disabled
-        onClick={handleNextClick}>
+        disabled>
         &rarr;
       </button> :
         <button
@@ -39,8 +63,7 @@ function Arrows({
       {disableLeftArrow ? <button
         type='button'
         disabled
-        className={leftArrowClass ? leftArrowClass : "leftArrow"}
-        onClick={handlePrevClick}>
+        className={leftArrowClass ? leftArrowClass : "leftArrow"}>
         &larr;
       </button> :
         <button
@@ -52,5 +75,14 @@ function Arrows({
     </>
   )
 };
+
+Arrows.propTypes = {
+  disableLeftArrow: PropTypes.func,
+  disableRightArrow: PropTypes.func,
+  rightArrowClass: PropTypes.string,
+  leftArrowClass: PropTypes.string,
+  handleNextClick: PropTypes.func.isRequired,
+  handlePrevClick: PropTypes.func.isRequired,
+}
 
 export default Arrows;
