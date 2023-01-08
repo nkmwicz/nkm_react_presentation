@@ -10,6 +10,10 @@ body{
   text-align: center;
 }
 
+p {
+  font-size: calc(10px + 1vw);
+}
+
 .main{
   position: absolute;
   top: 0;
@@ -68,9 +72,21 @@ h1{
   font-size: 1vw;
 }
 
-.left-box p {
-  font-size: 1.5em;
+.button {
+  background-color: lightgrey;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: solid black 1px;
+  border-radius: 5pt;
+  height: calc(22px + 2vw);
+  width: calc(22px + 2vw);
 }
+
+/* .left-box p {
+  font-size: 1.5em;
+} */
 
 .left-box{
   position: absolute;
@@ -136,10 +152,6 @@ h1{
   position:absolute;
   right: 10px;
   top: 50%;
-  background-color: lightgrey;
-  color: black;
-  border: solid black 1px;
-  border-radius: 5pt;
   z-index: 999;
 }
 
@@ -147,10 +159,6 @@ h1{
   position:absolute;
   left: 10px;
   top: 50%;
-  background-color: lightgrey;
-  color: black;
-  border: solid black 1px;
-  border-radius: 5pt;
   z-index: 999;
 }
 
@@ -204,9 +212,9 @@ button:disabled {
   flex: 1,
 }
 
-.content-box p {
+/* .content-box p {
   font-size: 1.7em;
-}
+} */
 
 .content-box li {
   font-size: 1.5em;
