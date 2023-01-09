@@ -39,23 +39,25 @@ function SplitSlideEmbed({
           {title} {subTitle ? <><br /> {subTitle}</> : null}
         </h1>
       </div>
-      <div className={leftBoxClass ? leftBoxClass : "left-box"}>
-        {typeof textArray !== 'object' ?
-          console.error("textArray prop must be included, and it should have the following data format: [{text: 'string', color: 'string'}]") :
-          textArray.map(a => {
-            return (
-              <p
-                key={uuidv4()}
-                style={{ color: a.color }}>
-                {a.text}
-              </p>
-            )
-          })}
-      </div>
-      <div
-        className={rightChildBoxClass ? `${rightChildBoxClass} right-box` : "right-box"}>
-        <div class="ratio ratio-16x9 embed-box">
-          <iframe src={embedURL} title={embedTitle} allowFullScreen />
+      <div className="split-container">
+        <div className={leftBoxClass ? leftBoxClass : "left-box"}>
+          {typeof textArray !== 'object' ?
+            console.error("textArray prop must be included, and it should have the following data format: [{text: 'string', color: 'string'}]") :
+            textArray.map(a => {
+              return (
+                <p
+                  key={uuidv4()}
+                  style={{ color: a.color }}>
+                  {a.text}
+                </p>
+              )
+            })}
+        </div>
+        <div
+          className={rightChildBoxClass ? `${rightChildBoxClass} right-box` : "right-box"}>
+          <div className="ratio ratio-16x9 embed-box">
+            <iframe src={embedURL} title={embedTitle} allowFullScreen allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" />
+          </div>
         </div>
       </div>
     </div>

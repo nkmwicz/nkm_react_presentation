@@ -5,8 +5,11 @@ import CenteredSlide from './CenteredSlide';
 import SplitSlideChild from './SplitSlideChild';
 
 /**
- * Layout takes a state array that follows the data model
- * discussed for each. 
+ * Layout is a default layout that uses takes a state array that follows the data model
+ * discussed for each. It also takes various props
+ * that help control the  
+ * --ImagesToCache takes an array of images that should be
+ * cached so they will be available before
  */
 function Layout({
   slideArray,
@@ -14,6 +17,8 @@ function Layout({
   index,
   setIndex,
   ImagesToCache,
+  setIsLoading,
+  isLoading,
 }) {
 
 

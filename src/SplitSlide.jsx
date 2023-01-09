@@ -36,32 +36,33 @@ function SplitSlide({
           {title} {subTitle ? <><br /> {subTitle}</> : null}
         </h1>
       </div>
-      <div className={leftBoxClass ? leftBoxClass : "left-box"}>
-        {typeof textArray !== 'object' ?
-          console.error("textArray prop must be included, and it should have the following data format: [{text: 'string', color: 'string'}]") :
-          textArray.map(a => {
-            return (
-              <div className="left-text-container">
-                <p
-                  key={uuidv4()}
-                  style={{ color: a.color }}>
-                  {a.text}
-                </p>
-              </div>
-            )
-          })}
-      </div>
-      <div className={rightBoxClass ? rightBoxClass : "right-box"}>
-        {typeof imageObject !== 'object' ?
-          console.error("imageObject must be present and in the following data format: {image: 'string', description: 'string'}")
-          : <figure
-            className={imgBoxClass ? imgBoxClass : "img-right-box"}>
-            <img src={imageObject.image} alt={imageObject.description} />
-            <figcaption
-              className="text-center">
-              {imageObject.description}
-            </figcaption>
-          </figure>}
+      <div className="split-container">
+        <div className={leftBoxClass ? leftBoxClass : "left-box"}>
+          {typeof textArray !== 'object' ?
+            console.error("textArray prop must be included, and it should have the following data format: [{text: 'string', color: 'string'}]") :
+            textArray.map(a => {
+              return (
+                <div className="left-text-container" key={uuidv4()}>
+                  <p
+                    style={{ color: a.color }}>
+                    {a.text}
+                  </p>
+                </div>
+              )
+            })}
+        </div>
+        <div className={rightBoxClass ? rightBoxClass : "right-box"}>
+          {typeof imageObject !== 'object' ?
+            console.error("imageObject must be present and in the following data format: {image: 'string', description: 'string'}")
+            : <figure
+              className={imgBoxClass ? imgBoxClass : "img-right-box"}>
+              <img src={imageObject.image} alt={imageObject.description} />
+              <figcaption
+                className="text-center">
+                {imageObject.description}
+              </figcaption>
+            </figure>}
+        </div>
       </div>
     </div>
   )
