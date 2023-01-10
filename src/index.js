@@ -7,3 +7,4 @@ export { default as cacheImages } from './cacheImages';
 export { default as SplitSlideEmbed } from './SplitSlideEmbed';
 export { default as changeSlideWithKeys } from './changeSlideWithKeys';
 export { default as LoadingSpinner } from './LoadingSpinner';
+export { default as Layout } from './Layout';
