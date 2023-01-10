@@ -29,8 +29,7 @@ function SplitSlideEmbed({
   leftBoxClass,
   textArray,
   rightChildBoxClass,
-  embedURL,
-  embedTitle,
+  embed
 }) {
   return (
     <div>
@@ -56,7 +55,7 @@ function SplitSlideEmbed({
         <div
           className={rightChildBoxClass ? `${rightChildBoxClass} right-box` : "right-box"}>
           <div className="ratio ratio-16x9 embed-box">
-            <iframe src={embedURL} title={embedTitle} allowFullScreen allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" />
+            <iframe src={embedTitle.url} title={embed.title} allowFullScreen allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" />
           </div>
         </div>
       </div>
@@ -74,8 +73,10 @@ SplitSlideEmbed.propTypes = {
     text: PropTypes.string,
     color: PropTypes.string
   })),
-  embedTitle: PropTypes.string,
-  embedURL: PropTypes.string,
+  embedTitle: PropTypes.shape({
+    text: PropTypes.string,
+    url: PropTypes.string
+  }),
   ref: PropTypes.oneOfType([
     PropTypes.func,
     PropTypes.shape({ current: PropTypes.any })
