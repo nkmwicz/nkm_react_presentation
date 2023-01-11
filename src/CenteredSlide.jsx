@@ -6,7 +6,7 @@ import "./styling.css";
 /**
  * --headerClass is a class
  * --recommended data model for images: {image: 'string', flex: Number, description: 'String' }. image is the image url. Flex is the flex number for the image. Default value is 1. Change to 2 if you want that image to be twice the width of the other images. Description is the figcaption value and alt-text.
- * --If you prefer a series of columns of text, use textArray, which takes an array of objects: [{text: [{text: 'String', color: 'String'}, [{text: 'String', color: 'String'}]], color: 'String'}].
+ * --If you prefer a series of columns of text, use textArray, which takes an array of objects: [{text: string, color: string, children: [{text: string, color: string}]}].
  * The convoluted array of arrays for text permits subitems to be incorporated into the 
  * --headerClass
  * --contentBoxClass
@@ -74,7 +74,14 @@ CenteredSlide.propTypes = {
   title: PropTypes.string,
   subTitle: PropTypes.string,
   imagesArray: PropTypes.array,
-  textArray: PropTypes.array,
+  textArray: PropTypes.arrayOf(PropTypes.shape({
+    text: PropTypes.string,
+    color: PropTypes.string,
+    children: PropTypes.arrayOf(PropTypes.shape({
+      text: PropTypes.string,
+      color: PropTypes.string
+    }))
+  })),
   contentBoxClass: PropTypes.string,
   contentTextClass: PropTypes.string,
   imageArrayBoxClass: PropTypes.string,
