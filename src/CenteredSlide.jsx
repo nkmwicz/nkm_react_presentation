@@ -48,18 +48,20 @@ function CenteredSlide({
             return (
               <>
                 <div key={uuidv4()} className="text">
-                  <p
-                    key={uuidv4()}
-                    style={{ color: a.color }}>
-                    {a.text}
-                  </p>
-                  {a.children && <ul>
-                    {a.children.map(b => {
-                      return (
-                        <li key={uuidv4()} style={{ color: b.color }}>{b.text}</li>
-                      )
-                    })}
-                  </ul>}
+                  <div className="text-item">
+                    <p
+                      key={uuidv4()}
+                      style={{ color: a.color }}>
+                      {a.text}
+                    </p>
+                    {a.children && <ul>
+                      {a.children.map(b => {
+                        return (
+                          <li key={uuidv4()} style={{ color: b.color }}>{b.text}</li>
+                        )
+                      })}
+                    </ul>}
+                  </div>
                 </div>
               </>
             )
