@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import PropTypes from 'prop-types';
 import "./styling.css";
 
 
@@ -44,41 +45,39 @@ function CenteredSlide({
             ))}
           </div> :
           <div className={`${contentTextClass} content-text`}>{textArray.map(a => {
-            if (a.length > 0) {
-              return (
-                <>
-                  <div key={uuidv4()} className="text">
-                    <p
-                      key={uuidv4()}
-                      style={{ color: a[0].color }}>
-                      {a[0].text}
-                    </p>
-                    {a.text.length > 1 && <ul>
-                      {a[1].map(b => {
-                        return (
-                          <li key={uuidv4()} style={{ color: b.color }}>{b.text}</li>
-                        )
-                      })}
-                    </ul>}
-                  </div>
-                </>
-              )
-            }
-            // if (a.length === 0) {
             return (
-              <div key={uuidv4()} className="text">
-                <p
-                  key={uuidv4()}
-                  style={{ color: a.color }}>
-                  {a.text}
-                </p>
-              </div>
+              <>
+                <div key={uuidv4()} className="text">
+                  <p
+                    key={uuidv4()}
+                    style={{ color: a.color }}>
+                    {a.text}
+                  </p>
+                  {a.children && <ul>
+                    {a.children.map(b => {
+                      return (
+                        <li key={uuidv4()} style={{ color: b.color }}>{b.text}</li>
+                      )
+                    })}
+                  </ul>}
+                </div>
+              </>
             )
-            // }
           })}</div>}
       </div>
     </div>
   )
+}
+
+CenteredSlide.propTypes = {
+  headerClass: PropTypes.string,
+  title: PropTypes.string,
+  subTitle: PropTypes.string,
+  imagesArray: PropTypes.array,
+  textArray: PropTypes.array,
+  contentBoxClass: PropTypes.string,
+  contentTextClass: PropTypes.string,
+  imageArrayBoxClass: PropTypes.string,
 }
 
 export default CenteredSlide;
