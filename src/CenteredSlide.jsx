@@ -4,7 +4,7 @@ import "./styling.css";
 
 
 /**
- * --headerClass is a class
+ * --headerClass is a class added for customizing css of the header.
  * --recommended data model for images: {image: 'string', flex: Number, description: 'String' }. image is the image url. Flex is the flex number for the image. Default value is 1. Change to 2 if you want that image to be twice the width of the other images. Description is the figcaption value and alt-text.
  * --If you prefer a series of columns of text, use textArray, which takes an array of objects: [{text: string, color: string, children: [{text: string, color: string}]}].
  * The convoluted array of arrays for text permits subitems to be incorporated into the 
