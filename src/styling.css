@@ -11,7 +11,11 @@ body{
 }
 
 p {
-  font-size: calc(10px + 1vw);
+  font-size: calc(10px + 1vw) !important;
+}
+
+li {
+  font-size: calc(10px + 1vw) !important;
 }
 
 .main{
@@ -180,12 +184,13 @@ button:disabled {
 
 .content-box{
   position: absolute;
-  width: 80%;
+  width: 100vw;
   height: 80%;
-  padding: 0 20px;
+  padding: 0 calc(35px + 1.2vw);
   top: 15%;
-  left: 10%;
-  /* object-fit: contain; */
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
 }
 
 .content-images {
@@ -228,7 +233,7 @@ button:disabled {
 } */
 
 .content-box li {
-  font-size: 1.5em;
+  font-size: calc(10px + 1vw) !important;
 }
 
 .cover {
