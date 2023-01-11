@@ -20,8 +20,8 @@ function QuickLayout({
 
 
   return (
-    <div className='main'>
-      <Arrows />
+    <div >
+      {/* <Arrows /> */}
       {slide.intro && <Intro
         title={slide.title}
         subTitle={slide.subTitle}
