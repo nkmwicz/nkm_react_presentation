@@ -60,7 +60,7 @@ li {
   display: flex;
   width: 100vw;
   text-align: center;
-  color: black;
+  /* color: black; */
   top: 1vh;
   left: 0;
   height: 10vh;
@@ -225,12 +225,15 @@ button:disabled {
 }
 
 .text{
-  flex: 1,
+  flex: 1;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
 }
 
-/* .content-box p {
-  font-size: 1.7em;
-} */
+.text-item{
+  margin: 0 auto;
+}
 
 .content-box li {
   font-size: calc(10px + 1vw) !important;
@@ -239,7 +242,6 @@ button:disabled {
 .cover {
   height: 100%;
   width: 100%;
-  /* background-color: rgb(218, 216, 214); */
 }
 
 .embed-box{
