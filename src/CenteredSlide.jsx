@@ -5,7 +5,7 @@ import "./styling.css";
 
 /**
  * --headerClass is a class added for customizing css of the header.
- * --recommended data model for images: {image: 'string', flex: Number, description: 'String' }. image is the image url. Flex is the flex number for the image. Default value is 1. Change to 2 if you want that image to be twice the width of the other images. Description is the figcaption value and alt-text.
+ * --recommended data model for images: {image: 'string', opacity: Number, description: 'String' }. image is the image url. opacity is the opacity number for the image. Default value is 1. Change to 2 if you want that image to be twice the width of the other images. Description is the figcaption value and alt-text.
  * --If you prefer a series of columns of text, use textArray, which takes an array of objects: [{text: string, color: string, children: [{text: string, color: string}]}].
  * The convoluted array of arrays for text permits subitems to be incorporated into the 
  * --headerClass
@@ -36,7 +36,7 @@ function CenteredSlide({
               <figure
                 key={uuidv4()}
                 className={`${imageArrayBoxClass} imgArray-box`}
-                style={a.flex ? { flex: a.flex } : { flex: 1 }}>
+                style={a.opacity ? { opacity: a.opacity } : { opacity: 1 }}>
                 <img src={a.image ? a.image : null} alt={a.description} />
                 <figcaption className="text-center">
                   {a.description}
