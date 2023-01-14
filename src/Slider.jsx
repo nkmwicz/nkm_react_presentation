@@ -1,7 +1,18 @@
-function Slider() {
-  <div style={{ width: '75%' }}>
-    <SliderUnstyled className="slider" defaultValue={10} />
+import './styling.css';
+import SliderUnstyled from '@mui/base/SliderUnstyled';
+import PropTypes from 'prop-types';
+
+function Slider({
+  sliderClass,
+}) {
+  <div className={sliderClass}>
+    <SliderUnstyled
+      className="slider" />
   </div>
 };
+
+Slider.propTypes = {
+  sliderClass: PropTypes.string
+}
 
 export default Slider;
