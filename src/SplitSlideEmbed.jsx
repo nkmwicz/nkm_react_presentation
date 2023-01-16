@@ -55,7 +55,7 @@ function SplitSlideEmbed({
         <div
           className={rightChildBoxClass ? `${rightChildBoxClass} right-box` : "right-box"}>
           <div className="ratio ratio-16x9 embed-box">
-            <iframe src={embedTitle.url} title={embed.title} allowFullScreen allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" />
+            <iframe src={embed.url} title={embed.title} allowFullScreen allow="accelerometer; encrypted-media; gyroscope; picture-in-picture" />
           </div>
         </div>
       </div>
