@@ -46,24 +46,22 @@ function CenteredSlide({
           </div> :
           <div className={`${contentTextClass} content-text`}>{textArray.map(a => {
             return (
-              <>
-                <div key={uuidv4()} className="text">
-                  <div className="text-item">
-                    <p
-                      key={uuidv4()}
-                      style={{ color: a.color }}>
-                      {a.text}
-                    </p>
-                    {a.children && <ul>
-                      {a.children.map(b => {
-                        return (
-                          <li key={uuidv4()} style={{ color: b.color }}>{b.text}</li>
-                        )
-                      })}
-                    </ul>}
-                  </div>
+              <div key={uuidv4()} className="text">
+                <div className="text-item" key={uuidv4()}>
+                  <p
+                    key={uuidv4()}
+                    style={{ color: a.color }}>
+                    {a.text}
+                  </p>
+                  {a.children && <ul key={uuidv4()}>
+                    {a.children.map(b => {
+                      return (
+                        <li key={uuidv4()} style={{ color: b.color }}>{b.text}</li>
+                      )
+                    })}
+                  </ul>}
                 </div>
-              </>
+              </div>
             )
           })}</div>}
       </div>
